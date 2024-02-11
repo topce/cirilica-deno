@@ -1,15 +1,22 @@
-call https://crates.io/crates/cirilica/ rust lib from deno
-after us it in telegram bot 
-https://web.telegram.org/k/#@latinica2cirilica_bot 
+# Rust Deno DenoDeploy Telegram bot that translate text from Serbian Latin to Serbian Cyrillic  
 
-that is implmented with deno deploy
+This project is generated with wasm build <https://deno.com/blog/wasmbuild>
 
-import { serve } from "https://deno.land/std@0.186.0/http/server.ts";
-import { Bot, webhookCallback } from "https://deno.land/x/grammy@v1.16.0/mod.ts";
+It call <https://crates.io/crates/cirilica/> rust library
+
+from deno <https://deno.com/>
+after us it in telegram bot
+<https://web.telegram.org/k/#@latinica2cirilica_bot>
+
+that is implemented with deno deploy <https://deno.com/deploy>
+
+```
+import { serve } from "<https://deno.land/std@0.186.0/http/server.ts>";
+import { Bot, webhookCallback } from "<https://deno.land/x/grammy@v1.16.0/mod.ts>";
 
 const bot = new Bot(Deno.env.get("BOT_TOKEN") || "");
 
-import { instantiate } from "https://raw.githubusercontent.com/topce/cirilica-deno/master/lib/rs_lib.generated.js";
+import { instantiate } from "<https://raw.githubusercontent.com/topce/cirilica-deno/master/lib/rs_lib.generated.js>";
 
 const { translate } = await instantiate();
 
@@ -36,4 +43,6 @@ return await handleUpdate(req);
 console.error(err);
 }
 });
+```
 
+# Причај Србски да те цио свијет разумије ;-)
